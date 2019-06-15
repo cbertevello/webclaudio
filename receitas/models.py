@@ -14,3 +14,6 @@ class Remedio(models.Model):
     prescricao = models.ForeignKey(Prescricao)
     nome_remedio = models.CharField(max_length=250)
     texto_remedio = models.CharField(max_length=10000)
+
+    def __str__(self):
+        return self.nome_remedio

@@ -1,0 +1,10 @@
+{% if all_prescricoes %}
+    <h3>Minhas Prescrições:</h3>
+    <ul>
+        {% for prescricao in all_prescricoes %}
+        <li><a href="/receitas/{{ prescricao.id }}/">{{ prescricao.nome_medico }} (de {{ prescricao.data_emissao }})</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>Você não possui nenhuma receita!</h3>
+{% endif %}

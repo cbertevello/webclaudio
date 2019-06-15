@@ -1,15 +1,15 @@
-from django.http import HttpResponse
+from django.http import Http404
+from django.shortcuts import render
 from .models import Prescricao
 
 
 def index(request):
-    all_prescricaos = Prescricao.objects.all()
-    html = ''
-    for prescricao in all_prescricaos:
-        url = '/receitas/' + str(prescricao.id) + '/'
-        html += '<a href="' + url + '">' + prescricao.nome_medico + ', de: ' + prescricao.data_emissao + '</a><br>'
-    return HttpResponse(html)
-
+    all_prescricoes = Prescricao.objects.all()
+    return render(request, 'receitas/index.html', {'all_prescricoes': all_prescricoes})
 
 def detail(request, prescricao_id):
-    return HttpResponse("<h2>Detalhes da Prescrição id: "+str(prescricao_id) + "</h2>")
+    try:
+        prescricao = Prescricao.objects.get(pk=prescricao_id)
+    except Prescricao.DoesNotExist:
+        raise Http404("NÃO EXISTE ESTA PRESCRIÇÃO!")
+    return render(request, 'receitas/detail.html', {'prescricao': prescricao})
