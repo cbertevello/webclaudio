@@ -1,1 +1,33 @@
-<h3>{{ prescricao }} :</h3>{{ prescricao.texto_receita }}
+<h3>{{ prescricao }} :</h3>{{ prescricao.texto_receita }}<br><p><br><p>
+
+{% if prescricao.remedio1.nome_remedio != '()_Sem Remédio' %}
+    <b>{{ prescricao.remedio1.nome_remedio }}  </b><br><p>{{ prescricao.remedio1.texto_remedio }}<br><p><br>
+{% endif %}
+
+{% if prescricao.remedio2.nome_remedio != '()_Sem Remédio' %}
+    <b>{{ prescricao.remedio2.nome_remedio }}  </b><br><p>{{ prescricao.remedio2.texto_remedio }}<br><p><br>
+{% endif %}
+
+{% if prescricao.remedio3.nome_remedio != '()_Sem Remédio' %}
+    <b>{{ prescricao.remedio3.nome_remedio }}  </b><br><p>{{ prescricao.remedio3.texto_remedio }}<br><p><br>
+{% endif %}
+
+{% if prescricao.remedio4.nome_remedio != '()_Sem Remédio' %}
+    <b>{{ prescricao.remedio4.nome_remedio }}  </b><br><p>{{ prescricao.remedio4.texto_remedio }}<br><p><br>
+{% endif %}
+
+{% if prescricao.remedio5.nome_remedio != '()_Sem Remédio' %}
+    <b>{{ prescricao.remedio5.nome_remedio }}  </b><br><p>{{ prescricao.remedio5.texto_remedio }}<br><p><br>
+{% endif %}
+
+{% if prescricao.remedio6.nome_remedio != '()_Sem Remédio' %}
+    <b>{{ prescricao.remedio6.nome_remedio }}  </b><br><p>{{ prescricao.remedio6.texto_remedio }}<br><p><br>
+{% endif %}
+
+{% if prescricao.remedio7.nome_remedio != '()_Sem Remédio' %}
+    <b>{{ prescricao.remedio7.nome_remedio }}  </b><br><p>{{ prescricao.remedio7.texto_remedio }}<br><p><br>
+{% endif %}
+
+{% if prescricao.remedio8.nome_remedio != '()_Sem Remédio' %}
+    <b>{{ prescricao.remedio8.nome_remedio }}  </b><br><p>{{ prescricao.remedio8.texto_remedio }}<br><p><br>
+{% endif %}
