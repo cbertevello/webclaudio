@@ -1,11 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.views import generic
 from .models import Prescricao
 
+class IndexView(generic.ListView):
+    template_name = 'receitas/index.html'
+    context_object_name = 'all_prescricoes'
 
-def index(request):
-    all_prescricoes = Prescricao.objects.all()
-    return render(request, 'receitas/index.html', {'all_prescricoes': all_prescricoes})
+    def get_queryset(self):
+        return Prescricao.objects.all()
 
-def detail(request, prescricao_id):
-    prescricao = get_object_or_404(Prescricao, pk=prescricao_id)
-    return render(request, 'receitas/detail.html', {'prescricao': prescricao})
+class DetailView(generic.DetailView):
+    model = Prescricao
+    template_name = 'receitas/detail.html'

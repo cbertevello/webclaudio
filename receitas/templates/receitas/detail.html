@@ -1,83 +1,30 @@
-{% load staticfiles %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<! -- link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css' -->
-<link rel="stylesheet" type="text/css" href="{% static 'receitas/style.css' %}"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+{% extends 'receitas/base.html' %}
+{% block title %}RepoMed Receita{% endblock %}
 
-<! -- nav class="navbar navbar-default" -->
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-
-        <!-- Header -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-                <span class ="icon-bar"></span>
-                <span class ="icon-bar"></span>
-                <span class ="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'receitas:index' %}">Lista</a>
-        </div>
-
-        <!-- Items -->
-        <div class="collapse navbar-collapse" id ="topNavBar">
-
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="{% url 'receitas:index' %}">
-                        <span class="glyphicon glyphicon-list-alt"></span>&nbsp; Prescrições
-                    </a>
-                </li>
-            </ul>
-
-            <form class="navbar-form navbar-left" role="search" method="get" action="#">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="q" value="">
-                </div>
-                <button type="submit" class="btn btn-default">Buscar</button>
-            </form>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                    <a href="{% url 'receitas:index' %}">
-                        <span class="glyphicon glyphicon-pencil"></span>&nbsp; Nova Prescrição
-                    </a>
-                </li>
-                <li class="">
-                    <a href="{% url 'receitas:index' %}">
-                        <span class="glyphicon glyphicon-off"></span>&nbsp; Sair
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-</nav>
-
-<h3>{{ prescricao }} :</h3>{{ prescricao.texto_receita }}<br><p></p><br><p></p>
-{% if prescricao.remedio1.nome_remedio != '()_Sem Remédio' %}<li>
-    <b>{{ prescricao.remedio1.nome_remedio }}  </b><br><p>{{ prescricao.remedio1.texto_remedio }}</p><br></li>
-{% endif %}
-{% if prescricao.remedio2.nome_remedio != '()_Sem Remédio' %}<li>
-    <b>{{ prescricao.remedio2.nome_remedio }}  </b><br><p>{{ prescricao.remedio2.texto_remedio }}</p><br></li>
-{% endif %}
-{% if prescricao.remedio3.nome_remedio != '()_Sem Remédio' %}<li>
-    <b>{{ prescricao.remedio3.nome_remedio }}  </b><br><p>{{ prescricao.remedio3.texto_remedio }}</p><br></li>
-{% endif %}
-{% if prescricao.remedio4.nome_remedio != '()_Sem Remédio' %}<li>
-    <b>{{ prescricao.remedio4.nome_remedio }}  </b><br><p>{{ prescricao.remedio4.texto_remedio }}</p><br></li>
-{% endif %}
-{% if prescricao.remedio5.nome_remedio != '()_Sem Remédio' %}<li>
-    <b>{{ prescricao.remedio5.nome_remedio }}  </b><br><p>{{ prescricao.remedio5.texto_remedio }}</p><br></li>
-{% endif %}
-{% if prescricao.remedio6.nome_remedio != '()_Sem Remédio' %}<li>
-    <b>{{ prescricao.remedio6.nome_remedio }}  </b><br><p>{{ prescricao.remedio6.texto_remedio }}</p><br></li>
-{% endif %}
-{% if prescricao.remedio7.nome_remedio != '()_Sem Remédio' %}<li>
-    <b>{{ prescricao.remedio7.nome_remedio }}  </b><br><p>{{ prescricao.remedio7.texto_remedio }}</p><br></li>
-{% endif %}
-{% if prescricao.remedio8.nome_remedio != '()_Sem Remédio' %}<li>
-    <b>{{ prescricao.remedio8.nome_remedio }}  </b><br><p>{{ prescricao.remedio8.texto_remedio }}</p><br></li>
-{% endif %}
+{% block body %}
+    <h3>{{ prescricao }} :</h3>{{ prescricao.texto_receita }}<br><p></p><br><p></p>
+    {% if prescricao.remedio1.nome_remedio != '()_Sem Remédio' %}<li>
+        <b>{{ prescricao.remedio1.nome_remedio }}  </b><br><p>{{ prescricao.remedio1.texto_remedio }}</p><br></li>
+    {% endif %}
+    {% if prescricao.remedio2.nome_remedio != '()_Sem Remédio' %}<li>
+        <b>{{ prescricao.remedio2.nome_remedio }}  </b><br><p>{{ prescricao.remedio2.texto_remedio }}</p><br></li>
+    {% endif %}
+    {% if prescricao.remedio3.nome_remedio != '()_Sem Remédio' %}<li>
+        <b>{{ prescricao.remedio3.nome_remedio }}  </b><br><p>{{ prescricao.remedio3.texto_remedio }}</p><br></li>
+    {% endif %}
+    {% if prescricao.remedio4.nome_remedio != '()_Sem Remédio' %}<li>
+        <b>{{ prescricao.remedio4.nome_remedio }}  </b><br><p>{{ prescricao.remedio4.texto_remedio }}</p><br></li>
+    {% endif %}
+    {% if prescricao.remedio5.nome_remedio != '()_Sem Remédio' %}<li>
+        <b>{{ prescricao.remedio5.nome_remedio }}  </b><br><p>{{ prescricao.remedio5.texto_remedio }}</p><br></li>
+    {% endif %}
+    {% if prescricao.remedio6.nome_remedio != '()_Sem Remédio' %}<li>
+        <b>{{ prescricao.remedio6.nome_remedio }}  </b><br><p>{{ prescricao.remedio6.texto_remedio }}</p><br></li>
+    {% endif %}
+    {% if prescricao.remedio7.nome_remedio != '()_Sem Remédio' %}<li>
+        <b>{{ prescricao.remedio7.nome_remedio }}  </b><br><p>{{ prescricao.remedio7.texto_remedio }}</p><br></li>
+    {% endif %}
+    {% if prescricao.remedio8.nome_remedio != '()_Sem Remédio' %}<li>
+        <b>{{ prescricao.remedio8.nome_remedio }}  </b><br><p>{{ prescricao.remedio8.texto_remedio }}</p><br></li>
+    {% endif %}
+{% endblock %}
