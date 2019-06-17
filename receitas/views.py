@@ -1,5 +1,4 @@
-from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Prescricao
 
 
@@ -8,8 +7,5 @@ def index(request):
     return render(request, 'receitas/index.html', {'all_prescricoes': all_prescricoes})
 
 def detail(request, prescricao_id):
-    try:
-        prescricao = Prescricao.objects.get(pk=prescricao_id)
-    except Prescricao.DoesNotExist:
-        raise Http404("NÃO EXISTE ESTA PRESCRIÇÃO!")
+    prescricao = get_object_or_404(Prescricao, pk=prescricao_id)
     return render(request, 'receitas/detail.html', {'prescricao': prescricao})

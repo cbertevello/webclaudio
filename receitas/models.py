@@ -1,15 +1,17 @@
 from django.db import models
 
 
-
+#class Song(models.Model):
 class Remedio(models.Model):
-    nome_remedio = models.CharField(max_length=250)
+    nome_remedio = models.CharField(max_length=250, default='()_Sem Remédio')
     texto_remedio = models.TextField()
+    #is_favorite = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.nome_remedio
 
-
+#class Album(models.Model):
 class Prescricao(models.Model):
     nome_medico = models.CharField(max_length=250)
     data_ano_mes_dia = models.CharField(max_length=8)
