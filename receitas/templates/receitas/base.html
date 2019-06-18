@@ -34,6 +34,12 @@
                             <span class="glyphicon glyphicon-tint"></span>&nbsp; Prescrições
                         </a>
                     </li>
+                    <li class="">
+                        <a href="{% url 'receitas:album-add' %}">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp; Nova Prescrição
+                        </a>
+                    </li>
+
                 </ul>
 
                 <form class="navbar-form navbar-left" role="search" method="get" action="#">
@@ -45,8 +51,8 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="">
-                        <a href="{% url 'receitas:index' %}">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp; Nova Prescrição
+                        <a href="http://127.0.0.1:8000/admin/receitas/prescricao/">
+                            <span class="glyphicon glyphicon-list-alt"></span>&nbsp; Administrar
                         </a>
                     </li>
                     <li class="">

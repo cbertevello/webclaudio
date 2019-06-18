@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.urlresolvers import reverse
+
 
 
 #class Song(models.Model):
@@ -92,6 +94,8 @@ class Prescricao(models.Model):
 
     # ----------------------------------------------------------------
 
+    def get_absolute_url(self):
+        return reverse('receitas:detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.data_mes_texto + ' - ' + self.nome_medico
