@@ -1,6 +1,5 @@
 {% extends 'receitas/base.html' %}
-{% block title %}Nova Prescrição{% endblock %}
-{% block albums_active %}active{% endblock %}
+{% block title %}Registro{% endblock %}
 
 {% block body %}
 <div class="container-fluid">
@@ -10,7 +9,7 @@
         <div class="col-sm-12 col-md-7">
             <div class="panel panel-default">
                 <div class = "panel-body">
-                    <h4>Digitar uma nova Prescrição:</h4>
+                    <h4>Criar nova Conta de Usuário (o e-mail é opcional)</h4>
                     {% if error_message %}
                         <p><strong>{{ error_message }}</strong></p>
                     {% endif %}
